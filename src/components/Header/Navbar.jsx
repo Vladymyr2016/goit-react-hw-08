@@ -6,11 +6,11 @@ const Navbar = () => {
     <div className={s.header}>
       <NavLink to="/">React Auth</NavLink>
       <h2>Volodymyr@gmail.com</h2>
-      <ul>
-        <li>
+      <ul className={s.items}>
+        <li className={s.item}>
           <NavLink to="/">Home</NavLink>
         </li>
-        <li>
+        <li className={s.item}>
           <NavLink to="/Contacts">Contacts</NavLink>
         </li>
       </ul>
