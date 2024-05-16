@@ -4,11 +4,12 @@ import { deleteContact } from '../../redux/contacts/operations';
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
-
+  console.log(name);
   return (
     <div className={s.container}>
       <li className={s.item} key={id}>
         <h2 className={s.title}>{name}</h2>
+
         <h2 className={s.number}>{number}</h2>
         <button
           className={s.btn}
