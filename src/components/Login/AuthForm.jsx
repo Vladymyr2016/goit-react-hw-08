@@ -1,5 +1,6 @@
 import { Formik, Field, Form } from 'formik';
 import s from './AuthForm.module.css';
+import { Link } from 'react-router-dom';
 
 const AuthForm = ({ title, onSubmit, initialValues, type }) => {
   return (
@@ -31,8 +32,11 @@ const AuthForm = ({ title, onSubmit, initialValues, type }) => {
           </button>
           <p>
             {type === 'register'
-              ? 'already have an account'
-              : "don't have account"}
+              ? 'already have an account '
+              : "don't have account "}
+            <Link to={type === 'register' ? '/login' : '/register'}>
+              {title}
+            </Link>
           </p>
         </Form>
       </Formik>
