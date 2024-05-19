@@ -35,7 +35,7 @@ const AuthForm = ({ title, onSubmit, initialValues, type }) => {
               ? 'already have an account '
               : "don't have account "}
             <Link to={type === 'register' ? '/login' : '/register'}>
-              {title}
+              {type === 'register' ? 'Login' : 'Register'}
             </Link>
           </p>
         </Form>
