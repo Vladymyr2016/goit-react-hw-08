@@ -6,8 +6,15 @@ import Contacts from './components/Contacts/Contacts';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import NotFound from './components/NotFound/NotFound';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshThunk } from './redux/auth/operations';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshThunk(), [dispatch]);
+  });
   return (
     <>
       <Routes>
