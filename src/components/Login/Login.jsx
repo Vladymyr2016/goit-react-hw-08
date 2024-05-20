@@ -1,10 +1,20 @@
 import { toast } from 'react-toastify';
 import AuthForm from './AuthForm';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { loginThunk } from '../../redux/auth/operations';
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmit = (values) => {
     toast.success('Login success');
-    console.log(values);
+    dispatch(loginThunk(values))
+      .unwrap()
+      .then(() => {
+        navigate('/');
+      })
+      .catch(toast.error('login or email invalid'));
   };
 
   const initialValues = {
