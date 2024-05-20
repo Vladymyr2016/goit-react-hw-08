@@ -15,7 +15,7 @@ const Register = () => {
         toast.success(`welcom ${data.user.name}`);
         navigate('/');
       })
-      .catch((error) => toast.error('credentials invalid'));
+      .catch(() => toast.error('credentials invalid'));
   };
 
   const initialValues = {
