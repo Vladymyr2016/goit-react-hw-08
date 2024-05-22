@@ -26,7 +26,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route
-            path="users"
+            path="/contacts"
             element={
               <PrivateRoute>
                 <ContactsPage />

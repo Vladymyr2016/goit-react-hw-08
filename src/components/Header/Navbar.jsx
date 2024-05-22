@@ -2,8 +2,7 @@ import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from '../../redux/auth/slice';
-import { logoutThunk } from '../../redux/auth/operations';
-
+import { authLogoutThunk } from '../../redux/auth/operations';
 const Navbar = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -31,7 +30,7 @@ const Navbar = () => {
           </>
         )}
         {isLoggedIn && (
-          <button onClick={() => dispatch(logoutThunk())} className={s.btn}>
+          <button onClick={() => dispatch(authLogoutThunk())} className={s.btn}>
             Logout
           </button>
         )}
