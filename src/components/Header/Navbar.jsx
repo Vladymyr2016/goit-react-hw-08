@@ -16,9 +16,6 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
 
-        <li className={s.item}>
-          <NavLink to="/users">Contacts</NavLink>
-        </li>
         {!isLoggedIn && (
           <>
             <li className={s.item}>
@@ -30,9 +27,17 @@ const Navbar = () => {
           </>
         )}
         {isLoggedIn && (
-          <button onClick={() => dispatch(authLogoutThunk())} className={s.btn}>
-            Logout
-          </button>
+          <>
+            <li className={s.item}>
+              <NavLink to="/contacts">Contacts</NavLink>
+            </li>
+            <button
+              onClick={() => dispatch(authLogoutThunk())}
+              className={s.btn}
+            >
+              Logout
+            </button>
+          </>
         )}
       </ul>
     </div>
