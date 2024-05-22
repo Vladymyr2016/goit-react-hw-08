@@ -1,5 +1,4 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home/Home';
 import Contacts from './components/Contacts/Contacts';
@@ -11,6 +10,7 @@ import { useEffect } from 'react';
 import { refreshThunk } from './redux/auth/operations';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route
-            path="contacts"
+            path="users"
             element={
               <PrivateRoute>
                 <Contacts />
@@ -32,7 +32,7 @@ function App() {
           />
         </Route>
         <Route
-          path="login"
+          path="/login"
           element={
             <PublicRoute>
               <Login />
@@ -40,14 +40,14 @@ function App() {
           }
         />
         <Route
-          path="register"
+          path="/register"
           element={
             <PublicRoute>
               <Register />
             </PublicRoute>
           }
         />
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

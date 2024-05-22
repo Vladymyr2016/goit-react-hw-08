@@ -17,7 +17,10 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className={s.item}>
-          <NavLink to="/contacts">Contacts</NavLink>
+          <NavLink to="/test">Test</NavLink>
+        </li>
+        <li className={s.item}>
+          <NavLink to="/users">Contacts</NavLink>
         </li>
         {!isLoggedIn && (
           <>
