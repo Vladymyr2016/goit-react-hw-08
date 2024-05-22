@@ -10,6 +10,7 @@ const Contact = ({ id, name, number }) => {
         <h2 className={s.title}>{name}</h2>
 
         <h2 className={s.number}>{number}</h2>
+
         <button
           className={s.btn}
           type="submit"

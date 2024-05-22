@@ -1,20 +1,30 @@
 .container {
     display: flex;
-    background-color: green;
+    color: black;
     justify-content: center;
     align-items: center;
+
 }
 
 .item {
     color: gray;
+    list-style-type: none;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 30%;
+    gap: 15px;
 }
 
 .title {
-    color: white;
+    color: black;
 }
 
 .number {
-    color: aliceblue;
+    color: black;
 }
 
 .btn {
