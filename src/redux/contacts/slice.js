@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addContact, deleteContact, fetchData } from './operations';
+import { logoutThunk } from '../auth/operations';
 
 const initialState = {
   contacts: {
@@ -15,6 +16,7 @@ const slice = createSlice({
 
   extraReducers: (builder) => {
     builder
+      .addCase(logoutThunk.pending, (state) => (state.items = []))
       .addCase(fetchData.fulfilled, (state, { payload }) => {
         state.contacts.items = payload;
         state.isLoading = false;

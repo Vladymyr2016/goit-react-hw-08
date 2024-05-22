@@ -1,7 +1,7 @@
 import './App.css';
 import Layout from './components/Layout';
 import NotFound from './components/NotFound/NotFound';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshThunk } from './redux/auth/operations';
 import PrivateRoute from './Routes/PrivateRoute';
@@ -11,8 +11,11 @@ import Home from './pages/HomePage';
 import ContactsPage from './pages/ContactsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import { selectIsRefresh } from './redux/auth/slice';
 
 function App() {
+  const isRefresh = useSelector(selectIsRefresh);
+  console.log(isRefresh);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshThunk());

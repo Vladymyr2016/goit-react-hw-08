@@ -20,6 +20,7 @@ const slice = createSlice({
   name: 'auth',
   initialState,
   selectors: {
+    selectIsRefresh: (state) => state.isRefreshing,
     selectToken: (state) => state.token,
     selectIsLoggedIn: (state) => state.isLoggedIn,
     selectUser: (state) => state.user,
@@ -41,13 +42,17 @@ const slice = createSlice({
       .addCase(logoutThunk.fulfilled, () => {
         return initialState;
       })
+      .addCase(refreshThunk.pending, (state) => {
+        state.isRefreshing = true;
+      })
       .addCase(refreshThunk.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
         state.user.email = payload.email;
-        state.isLoggedIn = true;
+        state.isLoggedIn = false;
       });
   },
 });
 
 export const authReducer = slice.reducer;
-export const { selectIsLoggedIn, selectUser, selectToken } = slice.selectors;
+export const { selectIsLoggedIn, selectUser, selectToken, selectIsRefresh } =
+  slice.selectors;
