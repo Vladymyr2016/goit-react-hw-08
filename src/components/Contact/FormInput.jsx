@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import s from './FormInput.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 
 const FormInput = () => {
   const dispatch = useDispatch();

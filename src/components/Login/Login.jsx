@@ -8,13 +8,14 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (values) => {
-    toast.success('Login success');
     dispatch(loginThunk(values))
       .unwrap()
       .then(() => {
+        toast.success('Login success');
+
         navigate('/');
       })
-      .catch(toast.error('login or email invalid'));
+      .catch(() => toast.error('login or email invalid'));
   };
 
   const initialValues = {

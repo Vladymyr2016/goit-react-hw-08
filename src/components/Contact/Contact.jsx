@@ -6,7 +6,7 @@ const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
     <div className={s.container}>
-      <li className={s.item} key={id}>
+      <li className={s.item}>
         <h2 className={s.title}>{name}</h2>
 
         <h2 className={s.number}>{number}</h2>

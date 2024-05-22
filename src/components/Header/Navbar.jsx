@@ -17,15 +17,15 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li className={s.item}>
-          <NavLink to="/Contacts">Contacts</NavLink>
+          <NavLink to="/contacts">Contacts</NavLink>
         </li>
         {!isLoggedIn && (
           <>
             <li className={s.item}>
-              <NavLink to="/Login">Login</NavLink>
+              <NavLink to="/login">Login</NavLink>
             </li>
             <li className={s.item}>
-              <NavLink to="/Register">Register</NavLink>
+              <NavLink to="/register">Register</NavLink>
             </li>
           </>
         )}
