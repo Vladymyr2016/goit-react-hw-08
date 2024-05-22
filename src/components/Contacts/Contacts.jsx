@@ -25,6 +25,7 @@ import { fetchData } from '../../redux/contacts/operations';
 import { selectFilteredContacts } from '../../redux/filter/selectors';
 import s from './Contacts.module.css';
 import FormInput from '../Contact/FormInput';
+import Filter from '../Filter/Filter';
 
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
@@ -38,6 +39,7 @@ const ContactList = () => {
     <>
       {loading && <p>Loading...</p>}
       <FormInput />
+      <Filter />
       <ul className={s.ul}>
         {contacts?.map((contact) => {
           return <Contact key={contact.id} {...contact} />;
