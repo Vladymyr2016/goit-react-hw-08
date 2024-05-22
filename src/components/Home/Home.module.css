@@ -1,11 +1,15 @@
 .home {
-    background-image: url('https://pixabay.com/photos/desert-birds-dunes-sunset-sand-8592629/');
-    background-size: cover;
-    /* Позволяет изображению покрывать весь фон */
-    background-position: center;
-    /* Центрирует изображение */
-    background-repeat: no-repeat;
-    /* Убирает повторение изображения */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Высота 100% высоты экрана */
+    background-color: #f0f0f0;
+}
+
+.home img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
