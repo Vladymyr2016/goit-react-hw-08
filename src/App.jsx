@@ -1,9 +1,5 @@
 import './App.css';
 import Layout from './components/Layout';
-import Home from './components/Home/Home';
-import Contacts from './components/Contacts/Contacts';
-import Login from './components/Login/Login';
-import Register from './components/Login/Register';
 import NotFound from './components/NotFound/NotFound';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -11,6 +7,10 @@ import { refreshThunk } from './redux/auth/operations';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
 import { Route, Routes } from 'react-router-dom';
+import Home from './pages/HomePage';
+import ContactsPage from './pages/ContactsPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function App() {
             path="users"
             element={
               <PrivateRoute>
-                <Contacts />
+                <ContactsPage />
               </PrivateRoute>
             }
           />
@@ -35,7 +35,7 @@ function App() {
           path="/login"
           element={
             <PublicRoute>
-              <Login />
+              <LoginPage />
             </PublicRoute>
           }
         />
@@ -43,7 +43,7 @@ function App() {
           path="/register"
           element={
             <PublicRoute>
-              <Register />
+              <RegisterPage />
             </PublicRoute>
           }
         />
